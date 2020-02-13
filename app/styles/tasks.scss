@@ -1,0 +1,57 @@
+table {
+  margin-left: 220px;
+  margin-top: 150px;
+  width: 1170px;
+
+  thead {
+    border-bottom: 1px solid $dark-grey-color;
+    margin: 5px;
+    tr {
+      th {
+        span.hidden {
+          display: none;
+        }
+
+        span {
+          font-size: 14px;
+          color: $darker-grey-color;
+        }
+      }
+    }
+  }
+
+  tbody {
+    tr.pinned {
+      background: #f7fcfd;
+    }
+
+    tr {
+      border-bottom: 1px solid $dark-grey-color;
+      border-top: 1px solid $dark-grey-color;
+
+      th {
+        padding-top: 12px;
+
+        span {
+          font-size: 14px;
+          color: $darker-grey-color;
+        }
+      }
+
+      td {
+        padding: 5px;
+
+        span.task-title {
+          font-weight: bold;
+          font-size: 16px;
+          color: #2b2f36;
+        }
+
+        span.task-desc {
+          font-size: 14px;
+          color: $darker-grey-color;
+        }
+      }
+    }
+  }
+}

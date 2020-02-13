@@ -1,20 +1,31 @@
-<li class="list-group-item {{if @task.isComplete "is-complete"}}">
-  <div class="d-flex">
-    <h5 class="card-title flex-fill">
-      {{@task.name}}
-    </h5>
-    <div class="toggle-done ml-auto">
-      <div class="btn-group btn-group-sm" role="group">
-        <BsButton @type="secondary">Pin</BsButton>
-        {{#if @task.isComplete}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) false}}>Undo</BsButton>
-        {{else}}
-          <BsButton @type="primary" onClick={{action (mut @task.isComplete) true}}>Done</BsButton>
-        {{/if}}
-      </div>
+<tr class={{if @task.isPinned "pinned"}}>
+  <td>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="customCheck1" checked={{@task.isComplete}} readonly/>
+      <label for="customCheck1" class="custom-control-label" readonly></label>
     </div>
-  </div>
-  <div class="task-description">
-    {{@task.description}}
-  </div>
-</li>
+  </td>
+  <td>
+    <span class="task-title">{{@task.name}}</span>
+    <br>
+    <span class="task-desc">{{@task.description}}</span>
+  </td>
+  <td>
+    {{#if @task.isPinned}}
+    <img src="assets/images/pin.svg" onClick={{action (mut @task.isPinned) false}} alt="pin">
+    {{else}}
+    <img src="assets/images/item1.svg" onClick={{action (mut @task.isPinned) true}} alt="pin">
+    {{/if}}
+  </td>
+  <td>
+    {{#if @task.isComplete}}
+     <button class="btn btn-sml btn-green" onClick={{action (mut @task.isComplete) false}}>
+      Completed
+    </button>
+    {{else}}
+    <button class="btn btn-sml btn-grey" onClick={{action (mut @task.isComplete) true}}>
+      Done
+    </button>
+    {{/if}}
+  </td>
+</tr>

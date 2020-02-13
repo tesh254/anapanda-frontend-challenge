@@ -1,2 +1,13 @@
 @import "ember-bootstrap/bootstrap";
+@import "./variables";
+@import "./commons.scss";
 @import "./styles";
+@import "./tasks.scss";
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}

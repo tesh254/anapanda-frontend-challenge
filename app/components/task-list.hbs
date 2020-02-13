@@ -1,7 +1,45 @@
-<div class="card">
-  <ul class="list-group list-group-flush">
-    {{#each @tasks as |task|}}
-      <SingleTask @task={{task}} />
+<table>
+  <thead>
+    <tr>
+      <th>
+        <span class="hidden">Checkbox</span>
+      </th>
+      <th>
+        <span>Tasks</span>
+      </th>
+      <th>
+        <span class="hidden">Pin</span>
+      </th>
+      <th>
+        <span>Action</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{!-- Show pinned tasks --}}
+    {{#if @tasks}}
+    <tr style="border-bottom: none;" class="pinned-tasks-header">
+      <th></th>
+      <th>
+        <span>Pinned tasks</span>
+      </th>
+    </tr>
+    {{/if}}
+
+
+    {{#each @tasks key="id" as |task|}}
+    {{#if task.isPinned}}
+    <SingleTask @task={{task}} />
+    {{/if}}
+    {{else}}
+    <span>No pinned tasks</span>
     {{/each}}
-  </ul>
-</div>
+    <br>
+    {{!-- Show incomplete tasks --}}
+    {{#each @tasks as |task|}}
+    {{#unless task.isPinned}}
+    <SingleTask @task={{task}} />
+    {{/unless}}
+    {{/each}}
+  </tbody>
+</table>

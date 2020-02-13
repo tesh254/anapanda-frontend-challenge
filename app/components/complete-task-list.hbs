@@ -1,0 +1,26 @@
+<table>
+  <thead>
+    <tr>
+      <th>
+        <span class="hidden">Checkbox</span>
+      </th>
+      <th>
+        <span>Tasks</span>
+      </th>
+      <th>
+        <span class="hidden">Pin</span>
+      </th>
+      <th>
+        <span>Action</span>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {{!-- Show complete tasks --}}
+    {{#each @tasks as |task|}}
+    {{#unless task.isComplete}}
+        <SingleTask @task={{task}} />
+    {{/unless}}
+    {{/each}}
+  </tbody>
+</table>

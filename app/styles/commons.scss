@@ -1,0 +1,27 @@
+
+// Common button styles
+.btn {
+    outline: none;
+    border-radius: 5px;
+}
+
+.btn-sml {
+    padding: 2px;
+    font-size: 12px;
+    min-width: 51px;
+    height: 20px;
+    font-weight: bold;
+}
+
+.btn-grey {
+    background: $dark-grey-color;
+}
+
+.btn-green {
+    background: $green-color;
+    color: white;
+}
+
+.btn-green:hover {
+    color: white;
+}

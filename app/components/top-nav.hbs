@@ -1,0 +1,9 @@
+{{yield}}
+<div class="nav-item" id={{if this.active "active"}} {{on "click" (fn this.changeTab 'active_tab' )}}>All Tasks</div>
+<div class="nav-item" id={{if this.complete_active "active"}} {{on "click" (fn this.changeTab 'complete_tab' )}}>
+    Completed Tasks
+</div>
+
+<div class="profile-image">
+    <img src="assets/images/avatar.png" alt="avatar">
+</div>
